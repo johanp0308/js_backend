@@ -1,31 +1,37 @@
 import crud from "./modules/dataCRUD.js"
 
-const myform = document.querySelector("form");
+
+const myform = document.querySelector(".addForm");
 const dTable = document.querySelector("#data-table");
+const dialog = document.querySelector("#dialog-edit");
+const formedit = document.querySelector(".edit-form");
 
-
-const crearBtns=()=>{
-    btnsDele = document.querySelectorAll(".btn-del");
-    btnsEdit = document.querySelectorAll(".btn-edit");
-}
-
-const asignarEvents=(element)=>{
-    element.forEach((btn)=>{
-        btn.addEventListener("click",(btn)=>{
-            console.log(btn)
-        })
-    })
-}
+console.log(dialog);
 
 myform.addEventListener("submit",(e) => {
     e.preventDefault();
     crud.createData(e);
 });
 
-await addEventListener("DOMContentLoaded",(e)=>{
+formedit.addEventListener("submit",(e)=>{
     e.preventDefault();
-    let butons = btnsDele;
-    crud.actulizarTable(dTable);
+    let data = 
+    crud.editData()
 });
 
-const btnsDele = 
+
+
+addEventListener("DOMContentLoaded",(e)=>{
+    e.preventDefault();
+    let promis = crud.actulizarTable(dTable);
+    let btnss= promis.then((result)=>{
+        result[0].forEach((element)=>{
+            element.addEventListener("click",()=>crud.deleteData(element.id))
+        });
+        result[1].forEach((element)=>{
+            element.addEventListener("click",()=>{
+                dialog.showModal();
+            });
+        });
+    })
+});
