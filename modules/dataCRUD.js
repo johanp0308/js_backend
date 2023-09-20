@@ -20,7 +20,7 @@ const deleteData = async(id)=>{
         headers:{"content-type":"application/json"},
     }
     let res = (await fetch(bdApi+"/"+id,config)).json;
-    console.log(res);
+    location.reload();
 }
 
 const editData = async(id,data)=>{
@@ -62,9 +62,21 @@ const actulizarTable = async(tabla)=>{
     return arrNod;
 }
 
+const totalData= async()=>{
+    let trData = document.querySelector("#total-data")
+    let res = await((await fetch(bdApi)).json());
+    let total = 0;
+    res.map((e)=>{
+        (e.caja === 'ingreso') ? total += e.valor : total -= e.valor ;
+    });
+    
+    trData.insertAdjacentHTML("beforeend",`${total}`);
+}
+
 export default{
     actulizarTable,
     createData,
     deleteData,
-    editData
+    editData,
+    totalData
 }
