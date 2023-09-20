@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +8,19 @@
     <script src="main.js" type="module" defer></script>
 </head>
 <body>
-    <h1>CRUD in Javascript</h1>
+    <dialog id="dialog-edit">
+        <h3>Edit Quote</h3>
+        <form class="edit-form" action="" method="dialog">
+            <input type="number" required name="valor" id="valor" placeholder="Ingrese un monto">
+            <input type="radio" name="caja" value="ingreso" id="ingreso"><label for="ingreso">Ingreso</label>
+            <input type="radio" name="caja" value="egreso" id="egreso"><label for="">Egreso</label>
+            <input type="submit" value="Edit">
+        </form>
+    </dialog>
 
-
+    <h1>CRUDin Javascript</h1>
     <h3>Add Quote</h3>
-    <form action="">
+    <form class="addForm" action="">
         <input type="number" required name="valor" id="valor" placeholder="Ingrese un monto">
         <input type="radio" name="caja" value="ingreso" id="ingreso"><label for="ingreso">Ingreso</label>
         <input type="radio" name="caja" value="egreso" id="egreso"><label for="">Egreso</label>
@@ -25,13 +33,14 @@
             <tr>
                 <th>Id</th>
                 <th>Value</th>
-                <th>Tipo</th>
-                <th>Acciones</th>
+                <th>Type</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody id="data-table">
 
         </tbody>
+
     </table>
 </body>
 </html>
