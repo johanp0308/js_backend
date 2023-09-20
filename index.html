@@ -8,13 +8,30 @@
     <script src="main.js" type="module" defer></script>
 </head>
 <body>
+    <h1>CRUD in Javascript</h1>
 
 
+    <h3>Add Quote</h3>
     <form action="">
         <input type="number" required name="valor" id="valor" placeholder="Ingrese un monto">
         <input type="radio" name="caja" value="ingreso" id="ingreso"><label for="ingreso">Ingreso</label>
         <input type="radio" name="caja" value="egreso" id="egreso"><label for="">Egreso</label>
         <input type="submit" value="Calcular">
     </form>
+
+    <h3>Budget table</h3>
+    <table id="budget-table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Value</th>
+                <th>Tipo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="data-table">
+
+        </tbody>
+    </table>
 </body>
 </html>

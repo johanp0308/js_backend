@@ -3,3 +3,18 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
+
+body{
+    background-color: beige;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+td,th{
+    padding: .5em;
+    border: 1px solid black;
+}
