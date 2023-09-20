@@ -8,6 +8,7 @@
 
 body{
     background-color: beige;
+    width: 100vw;
 }
 
 table{
@@ -18,3 +19,10 @@ td,th{
     padding: .5em;
     border: 1px solid black;
 }
+
+#dialog-edit{
+    width: 100%;
+    height: 100vh;
+    padding: 2rem;
+}
+
