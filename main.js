@@ -19,7 +19,11 @@ addEventListener("DOMContentLoaded",(e)=>{
     let promis = crud.actulizarTable(dTable);
     let btnss= promis.then((result)=>{
         result[0].forEach((element)=>{
-            element.addEventListener("click",()=>crud.deleteData(element.id))
+            element.addEventListener("click",()=>{
+                let str = element.id.split("-");
+                let idEnter = Number(str[1]);
+                crud.deleteData(idEnter);
+            })
         });
         result[1].forEach((element)=>{
             element.addEventListener("click",()=>{

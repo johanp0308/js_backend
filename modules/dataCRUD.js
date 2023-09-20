@@ -11,22 +11,26 @@ const createData =  async(e)=>{
     };
     console.log(data);
     let res = await(await fetch(bdApi,config)).json();
+    location.reload()
 }
 
 const deleteData = async(id)=>{
-
+    let config={
+        method:"DELETE",
+        headers:{"content-type":"application/json"},
+    }
+    let res = (await fetch(bdApi+"/"+id,config)).json;
+    console.log(res);
 }
 
 const editData = async(id,data)=>{
-    console.log(typeof id,id,data);
-    console.log(JSON.stringify(data))
     let config = {
         method:"PUT",
         headers:{"content-type":"application/json"},
         body:JSON.stringify(data)
     }
     let res = (await fetch(bdApi + "/" + id, config));
-    console.log(res)
+    location.reload();
 }
 
 const actulizarTable = async(tabla)=>{
