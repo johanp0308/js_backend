@@ -13,13 +13,6 @@ myform.addEventListener("submit",(e) => {
     crud.createData(e);
 });
 
-formedit.addEventListener("submit",(e)=>{
-    e.preventDefault();
-    let data = 
-    crud.editData()
-});
-
-
 
 addEventListener("DOMContentLoaded",(e)=>{
     e.preventDefault();
@@ -31,6 +24,15 @@ addEventListener("DOMContentLoaded",(e)=>{
         result[1].forEach((element)=>{
             element.addEventListener("click",()=>{
                 dialog.showModal();
+                formedit.addEventListener("submit",(e)=>{
+                    e.preventDefault();
+                    let str = element.id.split("-");
+                    let idEnter = Number(str[1]);
+                    let data = Object.fromEntries(new FormData(e.target));
+                    data.valor = (typeof data.valor === "string")? Number(data.valor) : null;
+                    crud.editData(idEnter,data);
+                    dialog.close();
+                });
             });
         });
     })

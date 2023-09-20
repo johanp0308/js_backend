@@ -14,16 +14,19 @@ const createData =  async(e)=>{
 }
 
 const deleteData = async(id)=>{
-//     let config={
-//         method:"DELETE",
-//         headers:{"content-type":"application/json"},
-//         body:JSON.stringify(data)
-//     }
-//     let res = await(await fetch(bdApi,config)).json();
+
 }
 
-const editData = async(id,valor,tipo)=>{
-
+const editData = async(id,data)=>{
+    console.log(typeof id,id,data);
+    console.log(JSON.stringify(data))
+    let config = {
+        method:"PUT",
+        headers:{"content-type":"application/json"},
+        body:JSON.stringify(data)
+    }
+    let res = (await fetch(bdApi + "/" + id, config));
+    console.log(res)
 }
 
 const actulizarTable = async(tabla)=>{
