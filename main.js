@@ -40,4 +40,5 @@ addEventListener("DOMContentLoaded",(e)=>{
             });
         });
     })
+    crud.totalData();
 });
