@@ -1,15 +1,15 @@
 
-const bdApi = "https://6509d04cf6553137159c10aa.mockapi.io/tablapro"
+const bdApi = "http://localhost:5500/registros"
 
-const createData =  async(e)=>{
-    let data = Object.fromEntries(new FormData(e.target));
+// @Cambio la funcion ahora recibe es un objeto js
+const createData =  async(data)=>{
+    // @Error Si le mando un entero me devuelve un nulo
     data.valor = (typeof data.valor === "string") ? Number(data.valor) : null;
     let config ={
         method: "POST",
         headers: {"content-type":"application/json"},
         body: JSON.stringify(data)
     };
-    console.log(data);
     let res = await(await fetch(bdApi,config)).json();
     location.reload()
 }
@@ -33,14 +33,14 @@ const editData = async(id,data)=>{
     location.reload();
 }
 
-const actulizarTable = async(tabla)=>{
+const update = async(tabla)=>{
     let res = await(await fetch(bdApi)).json();
-    res.map((e)=>{
+    res.map((e)=>{      
         tabla.insertAdjacentHTML("beforeend",`
         <tr>
             <td>${e.id}</td>
             <td>${e.valor}</td>
-            <td>${e.2}</td>
+            <td>${e.caja}</td>
             <td>
                 <button class="btn-del" id='delet-${e.id}'>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-minus" viewBox="0 0 16 16">
@@ -72,6 +72,7 @@ const totalData= async()=>{
     
     trData.insertAdjacentHTML("beforeend",`${total}`);
 }
+
 
 export default{
     actulizarTable,
