@@ -4,7 +4,7 @@
   "description": "This is a project where expenses are saved",
   "main": "./src/main.js",
   "scripts": {
-    "dev": "json-server --watch db.json --port 5500"
+    "dev": "json-server --watch db.json --port 6880"
   },
   "keywords": [],
   "author": "Johan Sebastian Pachon Mojica",

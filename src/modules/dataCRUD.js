@@ -1,10 +1,8 @@
 
-const bdApi = "http://localhost:5500/registros"
+const bdApi = "http://localhost:6880/registros"
 
 
 const createData =  async(data)=>{
-
-    console.log(data)
     data.value = (typeof data.value === "string") ? Number(data.value) : null;
     let config ={
         method: "POST",
@@ -12,6 +10,7 @@ const createData =  async(data)=>{
         body: JSON.stringify(data)
     };
     let res = await(await fetch(bdApi,config)).json();
+    
     location.reload()
 }
 
