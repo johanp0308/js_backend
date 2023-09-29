@@ -1,10 +1,11 @@
 
 const bdApi = "http://localhost:5500/registros"
 
-// @Cambio la funcion ahora recibe es un objeto js
+
 const createData =  async(data)=>{
-    // @Error Si le mando un entero me devuelve un nulo
-    data.valor = (typeof data.valor === "string") ? Number(data.valor) : null;
+
+    console.log(data)
+    data.value = (typeof data.value === "string") ? Number(data.value) : null;
     let config ={
         method: "POST",
         headers: {"content-type":"application/json"},
@@ -39,8 +40,8 @@ const update = async(tabla)=>{
         tabla.insertAdjacentHTML("beforeend",`
         <tr>
             <td>${e.id}</td>
-            <td>${e.valor}</td>
-            <td>${e.caja}</td>
+            <td>${e.value}</td>
+            <td>${e.cash}</td>
             <td>
                 <button class="btn-del" id='delet-${e.id}'>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-minus" viewBox="0 0 16 16">
@@ -67,7 +68,7 @@ const totalData= async()=>{
     let res = await((await fetch(bdApi)).json());
     let total = 0;
     res.map((e)=>{
-        (e.caja === 'ingreso') ? total += e.valor : total -= e.valor ;
+        (e.cash === 'ingreso') ? total += e.value : total -= e.value ;
     });
     
     trData.insertAdjacentHTML("beforeend",`${total}`);
@@ -75,7 +76,7 @@ const totalData= async()=>{
 
 
 export default{
-    actulizarTable,
+    update,
     createData,
     deleteData,
     editData,
