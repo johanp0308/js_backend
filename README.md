@@ -80,16 +80,26 @@ In this repository, I will save what I learned requests to the mockAPI where I m
 
 #### PUT
 
-```http
-  PUT /https://6509d04cf6553137159c10aa.mockapi.io/tabla/:id
+**Method**: `PUT`
+
+**URL** : `http://localhost:5500/registros/:id`
+
+**Storage** : `src/modules/dataCRUD.js`
+
+**Module** : `editData` 
+
+**Querys** : `(id)`
+
+**Auth Required** : `false`
+
+```javascript
+//Enviado
+{
+  "id":"1"
+  "cash":"ingreso",
+  "value":20000
+}
 ```
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `id` | `number` | **Required**. Your API key |
-| `tipo` | `string` | **Required** |
-| `valor` | `number` | **Required** |
-
 
 ## JSON-server installation
 
@@ -133,6 +143,18 @@ To start the json-server, it will run on port 5500, so we run the following comm
 npm run dev
 ```
 
+## User manual
+
+### How to add a record
+
+To add a record we enter the value then choose the type of record and click calculate.
+
+![imageAdd](./assets_README/add_register.png)
+
+### How to eliminate
+continue....
+### How to edit
+continue...
 
 ## Author
 
