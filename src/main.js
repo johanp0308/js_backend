@@ -1,10 +1,13 @@
 import crud from "./modules/dataCRUD.js"
 
+const d = document
+const $ = (e) => d.querySelector(e)
 
-const myform = document.querySelector(".addForm");
-const dTable = document.querySelector("#data-table");
-const dialog = document.querySelector("#dialog-edit");
-const formedit = document.querySelector(".edit-form");
+
+const myform = $(".addForm");
+const dTable = $("#data-table");
+const dialog = $("#dialog-edit");
+const formedit = $(".edit-form");
 
 console.log(dialog);
 

@@ -1,5 +1,5 @@
 
-const bdApi = "https://6509d04cf6553137159c10aa.mockapi.io/tabla"
+const bdApi = "https://6509d04cf6553137159c10aa.mockapi.io/tablapro"
 
 const createData =  async(e)=>{
     let data = Object.fromEntries(new FormData(e.target));
@@ -40,7 +40,7 @@ const actulizarTable = async(tabla)=>{
         <tr>
             <td>${e.id}</td>
             <td>${e.valor}</td>
-            <td>${e.caja}</td>
+            <td>${e.2}</td>
             <td>
                 <button class="btn-del" id='delet-${e.id}'>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-minus" viewBox="0 0 16 16">
