@@ -9,11 +9,10 @@ const dTable = $("#data-table");
 const dialog = $("#dialog-edit");
 const formedit = $(".edit-form");
 
-console.log(dialog);
-
 myform.addEventListener("submit",(e) => {
     e.preventDefault();
-    crud.createData(e);
+    let data = Object.fromEntries(new FormData(e.target))
+    crud.createData(data);
 });
 
 
