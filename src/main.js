@@ -19,7 +19,7 @@ myform.addEventListener("submit",(e) => {
 
 addEventListener("DOMContentLoaded",(e)=>{
     e.preventDefault();
-    let promis = crud.actulizarTable(dTable);
+    let promis = crud.update(dTable);
     let btnss= promis.then((result)=>{
         result[0].forEach((element)=>{
             element.addEventListener("click",()=>{
