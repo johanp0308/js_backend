@@ -35,7 +35,7 @@ addEventListener("DOMContentLoaded",(e)=>{
                     let str = element.id.split("-");
                     let idEnter = Number(str[1]);
                     let data = Object.fromEntries(new FormData(e.target));
-                    data.valor = (typeof data.valor === "string")? Number(data.valor) : null;
+                    data.value = (typeof data.value === "string")? Number(data.value) : null;
                     crud.editData(idEnter,data);
                     dialog.close();
                 });
