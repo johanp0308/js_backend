@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Presupuesto</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="main.js" type="module" defer></script>
+    <link rel="stylesheet" href="./src/style.css">
+    <script src="./src/main.js" type="module" defer></script>
 </head>
 <body>
     <dialog id="dialog-edit">
         <h3>Edit Quote</h3>
         <form class="edit-form" action="" method="dialog">
-            <input type="number" required name="valor" id="valor" placeholder="Ingrese un monto">
-            <input type="radio" name="caja" value="ingreso" id="ingreso" required><label for="ingreso">Ingreso</label>
-                <input type="radio" name="caja" value="egreso" id="egreso" required><label for="">Egreso</label>
+            <input type="number" required name="value" id="valor" placeholder="Ingrese un monto">
+            <input type="radio" name="cash" value="ingreso" id="ingreso" required><label for="ingreso">Ingreso</label>
+                <input type="radio" name="cash" value="egreso" id="egreso" required><label for="">Egreso</label>
             <input type="submit" value="Edit">
         </form>
     </dialog>
@@ -21,9 +21,9 @@
     <h1>CRUDin Javascript</h1>
     <h3>Add Quote</h3>
     <form class="addForm" action="">
-        <input type="number" required name="valor" id="valor" placeholder="Ingrese un monto">
-        <input type="radio" name="caja" value="ingreso" id="ingreso" required><label for="ingreso">Ingreso</label>
-        <input type="radio" name="caja" value="egreso" id="egreso" required><label for="">Egreso</label>
+        <input type="number" required name="value" id="valor" placeholder="Ingrese un monto">
+        <input type="radio" name="cash" value="ingreso" id="ingreso" required><label for="ingreso">Ingreso</label>
+        <input type="radio" name="cash" value="egreso" id="egreso" required><label for="">Egreso</label>
         <input type="submit" value="Calcular">
     </form>
 
