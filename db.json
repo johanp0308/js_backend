@@ -1,0 +1,9 @@
+{
+    "registros":[
+        {
+            "id":"1",
+            "caja":"egreso",
+            "valor":5000
+        }
+    ]
+}
