@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Presupuesto</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
     <link rel="stylesheet" href="./src/style.css">
     <script src="./src/main.js" type="module" defer></script>
 </head>
@@ -11,42 +14,72 @@
     <dialog id="dialog-edit">
         <h3>Edit Quote</h3>
         <form class="edit-form" action="" method="dialog">
-            <input type="number" required name="value" id="valor" placeholder="Ingrese un monto">
+            <div class="input-group mb-3">
+                <span class="input-group-text">$</span>
+                <input type="number" required name="value" id="valor" placeholder="Ingrese un monto">
+                <span class="input-group-text">.00</span>
+              </div>              
+            
             <input type="radio" name="cash" value="ingreso" id="ingreso" required><label for="ingreso">Ingreso</label>
-                <input type="radio" name="cash" value="egreso" id="egreso" required><label for="">Egreso</label>
-            <input type="submit" value="Edit">
+            <input type="radio" name="cash" value="egreso" id="egreso" required><label for="">Egreso</label>
+            <input class="" type="submit" value="Edit">
         </form>
     </dialog>
+    
 
-    <h1>CRUDin Javascript</h1>
-    <h3>Add Quote</h3>
-    <form class="addForm" action="">
-        <input type="number" required name="value" id="valor" placeholder="Ingrese un monto">
-        <input type="radio" name="cash" value="ingreso" id="ingreso" required><label for="ingreso">Ingreso</label>
-        <input type="radio" name="cash" value="egreso" id="egreso" required><label for="">Egreso</label>
-        <input type="submit" value="Calcular">
-    </form>
+    <div class="conten-main">
+        <section class="add-registros">
+            <h1>CRUD in Javascript</h1>
+            <h3>Add Quote</h3>
+            <form class="addForm" action="">
+                <div class="input-group mb-3">
+                    <span class="input-group-text">$</span>
+                    <input type="text" inputmode="numeric" class="form-control" required name="value" id="valor" placeholder="Ingrese un monto">
+                    <span class="input-group-text">CO</span>
+                  </div>
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="cash" id="ingreso" required value="ingreso">
+                <label class="form-check-label" for="ingreso">
+                    Ingreso
+                </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="cash" value="egreso" id="egreso">
+                    <label class="form-check-label" for="egreso">
+                      Egreso
+                    </label>
+                </div>
 
-    <h3>Budget table</h3>
-    <table id="budget-table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Value</th>
-                <th>Type</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
+                <button type="submit" class="btn btn-primary">Calcular</button>
 
-        <tbody id="data-table">
-        </tbody>
+            </form>
+        </section>
 
-        <tfoot>
-            <tr>
-                <th>Total</th>
-                <td id="total-data"></td>
-            </tr>
-        </tfoot>
-    </table>
+        <div class="table-contain">
+            <h3>Budget table</h3>
+            <table id="budget-table" class="table table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Value</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="data-table">
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <th>Total</th>
+                        <td id="total-data"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
