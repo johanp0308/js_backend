@@ -11,8 +11,12 @@ const formedit = $(".edit-form");
 
 myform.addEventListener("submit",(e) => {
     e.preventDefault();
-    let data = Object.fromEntries(new FormData(e.target))
-    crud.createData(data);
+    let data = Object.fromEntries(new FormData(e.target));
+    if(Number(data.value) >0){
+        crud.createData(data);
+    }else{
+        alert("Error, valor no valido!")
+    }
 });
 
 
