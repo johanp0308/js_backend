@@ -152,10 +152,15 @@ To add a record we enter the value then choose the type of record and click calc
 ![imageAdd](./assets_README/add_register.png)
 
 ### How to eliminate
-continue....
-### How to edit
-continue...
+To delete records, what you do is press the button where a sheet with a line appears in the middle, the record will be deleted without asking for confirmation.
+![imageDelete](./assets_README/delete_register.PNG)
 
+### How to edit
+To edit a record, click the button where a pencil appears in the record row in the 'Actions' column.
+![imageEdit1](./assets_README/edit_register1.PNG)
+
+Then you will see the same fields that are for adding the record, you write and select what you need, press the 'Calculate' button and that's it, it's edited.
+![imageEdit2](./assets_README/edit_register2.PNG)
 ## Author
 
 - [@johanp0308](https://github.com/johanp0308)
